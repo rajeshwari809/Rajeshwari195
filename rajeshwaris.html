@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Dashboard</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        #header_div {
+            border: 5px solid #333;
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        #nav_div {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .project-button {
+            margin: 10px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            border: none;
+            background-color: #555;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-button:hover {
+            background-color: #777;
+        }
+
+        #content_div {
+            margin-top: 20px;
+            width: 80%;
+            height: 500px;
+            border: 3px solid #333;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background-color: #fff;
+            color: #333;
+        }
+    </style>
+</head>
+<script>
+    const projects = {
+        "alpha": { "color": "#FF6F61", "task": "Task1" },
+        "beta": { "color": "#6B5B95", "task": "Task2" },
+        "gamma": { "color": "#88B04B", "task": "Task3" }
+    };
+
+    function updateContent(project) {
+        document.getElementById("content_div").style.backgroundColor = projects[project].color;
+        document.getElementById("content-frame").innerHTML = `<h2>${projects[project].task}</h2>`;
+    }
+</script>
+<body>
+    <div id="header_div">
+        <h1>Project Dashboard</h1>
+    </div>
+
+    <div id="nav_div">
+        <button class="project-button" onclick="updateContent('alpha')">Project1</button>
+        <button class="project-button" onclick="updateContent('beta')">Project2</button>
+        <button class="project-button" onclick="updateContent('gamma')">Project3</button>
+    </div>
+
+    <div id="content_div">
+        <div id="content-frame"></div>div>
+    </div>
+</body>
+</html>
